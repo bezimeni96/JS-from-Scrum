@@ -90,20 +90,20 @@
 // console.log(makeArray(5));
 
 
-var myZoo = [
-  ["King Kong", ["gorilla", 42]],
-  ["Nemo", ["fish", 5]],
-  ["Punxsutawney Phil", ["groundhog", 11]]
-];
-const zooInventory = (zoo) => {
-  var output = [];
-  zoo.forEach(element => {
-    output.push(element[0] + " the " + element[1][0] + " is " + element[1][1])
-  })
-  console.log(output);
-}
+// var myZoo = [
+//   ["King Kong", ["gorilla", 42]],
+//   ["Nemo", ["fish", 5]],
+//   ["Punxsutawney Phil", ["groundhog", 11]]
+// ];
+// const zooInventory = (zoo) => {
+//   var output = [];
+//   zoo.forEach(element => {
+//     output.push(element[0] + " the " + element[1][0] + " is " + element[1][1])
+//   })
+//   console.log(output);
+// }
 
-zooInventory(myZoo);
+// zooInventory(myZoo);
 // OUTPUT: 
 // [
 //   'King Kong the gorilla is 42', 
