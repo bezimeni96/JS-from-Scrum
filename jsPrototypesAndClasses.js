@@ -1,10 +1,7 @@
-class Character {
-  static count = 0;
+var count = 0;
 
-  constructor(x, y) {
-    if (this.constructor === Character) {
-      throw new Error('Abstract class Character cannot be instantiated!');
-    }
+function Character(x=0, y=0) {
+  this.setPosition = (x, y) => {
     if (x <= 10 && y <= 10) {
       this.x = x;
       this.y = y;
@@ -13,41 +10,37 @@ class Character {
     }
   }
 
-  set setPosition(position) {
-    this.x = position.x;
-    this.y = position.y;
-  }
-
-  get position() {
+  this.getPosition = function() {
     return {
       x: this.x,
       y: this.y
     }
   }
 
-  static increaseCount() {
-    Character.count += 1;
+  this.incrementCount = function() {
+    count += 1;
+  }
+  
+  this.getCount = function() {
+    return count;
   }
 
-  static getCount() {
-    return Character.count;
-  }
+  this.setPosition(x,y);
+  this.incrementCount()
+}
+
+function PlayerCharacter(x,y) {
+  this.character = new Character(x,y)
+}
+
+function NonPlayerCharacter(x, y) {
+  this.character = new Character(x, y)
 }
 
 
-class PlayerCharacter extends Character {
-  constructor(x, y) {
-    super(x, y);
-    Character.increaseCount();
-  }
-}
+const mika = new PlayerCharacter(1,2);
+console.log(mika);
 
-class NonPlayerCharacter extends Character{
-  constructor(x, y) {
-    super(x, y);
-    Character.increaseCount();
-  }
-}
+const luka = new PlayerCharacter(3,5);
 
-const pera = new PlayerCharacter(2,8)
-console.log(Character.getCount());
+const pera = new NonPlayerCharacter(5,2)
